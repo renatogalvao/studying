@@ -22,7 +22,7 @@ function Student(name, age, gender){
 }
 
 
-Student.prototype.constructor = Student;
+// Student.prototype.constructor = Student;
 Student.prototype.dna = 'DNA STUDENT';
 Student.prototype.option = false;
 Student.prototype.hardCodeIt = function(){
