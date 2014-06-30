@@ -1,5 +1,39 @@
-<html>
-    <head>
-        <script src="js/ooj.js"></script>
-    </head>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+
+</body>
+<script>
+    // PLAYING WITH INHERITANCE
+
+    // CREATES THE "CLASS" PERSON
+    function Person(name, age, gender) {
+        this.dna = 'DNA PERSON';
+        this.name = name;
+        this.age = age;
+        this.gender = gender;
+        this.option = true;
+        this.hardCodeIt = function(){
+            return console.log(this.name +' has '+ this.age +' years old, is a '+ this.gender +' and is coding like an animal.');
+        }
+    }
+
+    // CREATE THE STUDENT CLASS AND INHERIT THE PERSON CLASS INTO IT
+    function Student(name, age, gender){
+        // this.prototype = new Person()
+        Person.apply(this,[name,age,gender]);
+        this.hardCodeIt = function(){
+            return console.log(this.name +' has '+ this.age +' years old , is a '+ this.gender +' and still a fucking teenager');
+        }
+    }
+
+    var Galvao = new Student('Wanderleia', 63, 'Woman');
+    Galvao.hardCodeIt();
+    console.log(Galvao)
+
+</script>
 </html>
