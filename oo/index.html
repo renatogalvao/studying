@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
+    <meta charset="UTF8">
     <title>Document</title>
 </head>
 <body>
@@ -20,15 +20,18 @@
         this.hardCodeIt = function(){
             return console.log(this.name +' has '+ this.age +' years old, is a '+ this.gender +' and is coding like an animal.');
         }
+        this.grita = function(){
+            console.log('grita fdp')
+        }
     }
 
     // CREATE THE STUDENT CLASS AND INHERIT THE PERSON CLASS INTO IT
     function Student(name, age, gender){
-        // this.prototype = new Person()
-        Person.apply(this,[name,age,gender]);
+        this.prototype = new Person();
         this.hardCodeIt = function(){
             return console.log(this.name +' has '+ this.age +' years old , is a '+ this.gender +' and still a fucking teenager');
         }
+        Person.apply(this,[name,age,gender]);
     }
 
     var Galvao = new Student('Wanderleia', 63, 'Woman');
